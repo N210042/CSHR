@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+body .form-container{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+body .form-container h2{
+    display: block;
+    letter-spacing: 1px;
+    margin: 20px 0px 30px 0px;
+}
+body .form-container form{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;  
+    flex-wrap: wrap;  
+}
+body .form-container .form-group{
+    width: 300px;
+    margin-bottom: 25px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+body .form-container .form-group label{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+body .form-container .form-group input{
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+body .form-container .btn{
+    width: 100%;
+    margin-bottom: 25px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+body .form-container .btn .submit-btn{
+    display: block;
+    width: 300px;
+    padding: 10px;
+    background-color: #472dbb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+body .form-container .btn .submit-btn:hover{
+    background-color: #4565ab;
+}
+#shpassword{
+    margin: 10px 0px 10px 0px;
+    padding: 3px;
+    cursor: pointer;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 200px;
+    padding: 10px 20px;
+    background-color: white;
+    font-family: 'Poppins',sans-serif;
+    color:#000000;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+select::-ms-expand{
+    display: none;
+}
+select option{
+    background-color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    
+}
+@media only screen and (max-width: 1400px){
+    body .form-container .form-group{
+        width: 270px;
+    }
+}
+@media only screen and (max-width: 1200px){
+    body .form-container .form-group{
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 1100px){
+    body .form-container .form-group{
+        width: 40%;
+    }
+}
+@media only screen and (max-width: 700px){
+    body .form-container .form-group{
+        width: 100%;
+    }
+}

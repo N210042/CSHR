@@ -1,0 +1,389 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.container .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 7px;
+    background-color: white;
+}
+.container .header .heading h1,h4{
+    text-align: center;
+    color: #AA0000;
+    padding: 3px 0px;
+}
+
+.container .main{
+    width: 100%;
+    height: 100%;
+}
+.container .main .title{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: #000000;  
+}
+.container .main .title a{
+        color: #555555;
+        margin: 5px 15px;
+        padding-bottom: 5px;
+        text-decoration: none;
+        letter-spacing: 1.03px;
+        font-family: sans-serif;
+
+}
+.container .main .title a:hover{
+    color: #000000;
+}
+.container .main .title h2{
+    letter-spacing: 1.5px;
+    color: white;
+    text-align: center;
+}
+
+.container .main .forms-cards{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    background-color: white;
+}
+
+.container .main .forms-cards .scroll-cards{
+    width: 55%;
+}
+.container .main .forms-cards .scroll-cards .card{
+    width: 90%;
+    height: 310px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    top: 40px;
+    border-radius: 3px;
+}
+.container .main .forms-cards .scroll-cards .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.container .main .forms-cards .scroll-cards .controls{
+    position: relative;
+    bottom: 130px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+}
+.container .main .forms-cards .scroll-cards .controls button{
+    padding: 7px 8px;
+    border: 1px solid #ccc;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+}
+.container .main .forms-cards .scroll-cards .controls button:hover{
+    background-color: #000000;
+}
+.container .main .forms-cards .scroll-cards .controls button ion-icon{
+    font-size: 20px;
+}
+.container .main .forms-cards .login-form{
+    width: 600px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.container .main .forms-cards .login-form form{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: .1px solid rgba(0,0,0,0.5);
+    border-top: 7px solid #000000;
+    border-radius: 3px;
+    margin-top: 30px;
+    padding-bottom: 20px;
+}
+.container .main .forms-cards .login-form form p{
+    width: 100%;
+    color: #000000;
+    letter-spacing: 1px;
+    padding: 15px 0px 10px 0px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+.container .main .forms-cards .login-form form .input-flex{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .main .forms-cards .login-form form .input-flex ion-icon{
+    border: 1px solid #000000;
+    font-size: 22px;
+    padding: 10px;
+}
+.container .main .forms-cards .login-form form .input-flex input{
+    width: 85%;
+    padding: 12px 13px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #000000;
+    letter-spacing: 1.1px;
+}
+.container .main .forms-cards .login-form form .h{
+    width: 85%;
+    display: flex;
+    padding: 7px 0px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+.container .main .forms-cards .login-form form .k{
+    width: 85%;
+    margin-top: 25px;
+    display: flex;
+    align-items: flex-start;
+}
+.container .main .forms-cards .login-form form .h b{
+    font-family: sans-serif;
+}
+.container .main .forms-cards .login-form form .k button{
+    padding: 10px 17px;
+    background: #000000;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.container .main .copyright{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: white;
+    padding: 20px;
+    font-family: sans-serif;
+    border-top:1px solid #000000;
+    border-bottom: 1px solid #000;
+}
+.container .main .copyright p{
+    color: #000000;
+    letter-spacing: 1.1px;
+}
+.container .main .copyright p a{
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.container .main .links-head{
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    padding: 30px 0px 0px 20px;
+}
+.container .main .links-head h3{
+    color: white;
+    padding-left: 40px;
+    font-family: sans-serif;
+    letter-spacing: 1.05px;
+}
+.container .main .links{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background: #000000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.container .main .links .link-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 25px;
+}
+.container .main .links .link-box a{
+    text-decoration: none;
+    color: #aaaaaa;
+    padding: 7px 13px;
+    letter-spacing: 1.03px;
+}
+.container .main .links .link-box a:hover{
+    color: #ffffff;
+}
+
+.container .main .mail-link{
+    background: #000000;
+}
+.container .main .mail-link  h3{
+    color: white;
+    padding: 10px 0px 10px 60px;
+    font-family: sans-serif;
+    letter-spacing: 1.05px;
+}
+.container .main .mail-link p{
+    color: #aaaaaa;
+    padding: 5px 0px 20px 60px;
+}
+.container .main .mail-link p a{
+    text-decoration: none;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.container .main .mail-link p ion-icon{
+    padding-right: 5px;
+}
+
+.container .main .social-media{
+    background: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .main .social-media .contact-phone{
+    height: 100%;
+}
+.container .main .social-media .contact-phone h3{
+    color: white;
+    padding: 10px 0px 10px 60px;
+    font-family: sans-serif;
+    letter-spacing: 1.05px;
+}
+.container .main .social-media .contact-phone p{
+    color: #aaaaaa;
+    padding: 5px 0px 20px 60px;
+}
+.container .main .social-media .s-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+    margin-right: 60px;
+    position: relative;
+    bottom: 10px;
+}
+.container .main .social-media .s-links h3{
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 1.05px;
+    padding: 0px 10px 15px 0px;
+    font-size: 20px;
+}
+.container .main .social-media .s-links .follow{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.container .main .social-media .s-links .follow ion-icon{
+    padding: 0px 17px 0px 0px;
+    font-size: 25px;
+    color: #ccc;
+    cursor: pointer;
+}
+.container .main .social-media .s-links .follow .facebook:hover{
+    color: #316FF6;
+}
+.container .main .social-media .s-links .follow .instagram:hover{
+    color: #cd486b;
+}
+.container .main .social-media .s-links .follow .twitter:hover{
+    color: #1DA1F2;
+}
+.container .main .social-media .s-links .follow .linkedin:hover{
+    color: #0077b5;
+}
+
+
+
+
+/*responsive*/
+@media only screen and (max-width: 1000px){
+    .container .header .img img{
+        width: 40px;
+    }
+    .container .header .heading h1{
+        font-size: 14px;
+    }
+    .container .header .heading h4{
+        font-size: 8px;
+    }
+    .container .main .title h2{
+        font-size: 17px;
+    }
+    .container .main .links-head{
+        padding-left: 0px;
+        margin-left: -5px;
+    }
+    .container .main .links{
+        padding-left: 0px;
+        margin-left: -5px;
+    }
+    .container .main .mail-link{
+        margin-left: -25px;
+    }
+    .container .main .social-media{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .container .main .social-media .contact-phone{
+        margin-left: -25px;
+    }
+    .container .main .social-media .s-links{
+        margin-top: 5px;
+        margin-left:  35px;
+    }
+    .container .main .social-media .s-links .follow a ion-icon{
+        font-size: 23px;
+    }
+    .container .main .copyright{
+        flex-direction: column;
+        padding: 10px;
+    }
+    .container .main .copyright p{
+        padding: 5px 0px;
+        line-height: 22px;
+        text-align: center;
+    }
+    .container .main .copyright p a{
+        display: none;
+    }
+}

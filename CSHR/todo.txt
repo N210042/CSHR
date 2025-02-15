@@ -1,0 +1,8 @@
+pdfs
+photos updation on home page
+password validation in employee and student registration  and change interfaces add home button to go to adminLogin page
+DOCTO SIGNUP STUDENT SIGNUP POPUP BOXES
+employee statistics
+employee password reset form and otp 
+administrator pages
+deletin records problem with id

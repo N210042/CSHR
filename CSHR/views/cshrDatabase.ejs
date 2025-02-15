@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSHR - Admin</title>
+        <link rel="stylesheet" href="/cshr.css">
+        <link rel="icon" type="image/x-icon" href="/Logo.ico">
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0"/>
+        <meta name = "author" content = "HEMANTH KUMAR"/>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+        <style>
+            .container .main .doctor-login{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                background-color: white;
+            }
+            .container .main .doctor-login .login-form{
+                width: 600px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 10px;
+                margin-bottom: 40px;
+            }
+            .container .main .doctor-login .login-form form{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: column;
+                border: .1px solid rgba(0,0,0,0.5);
+                border-top: 7px solid black;
+                border-radius: 3px;
+                margin-top: 30px;
+                padding-bottom: 20px;
+            }
+            .container .main .doctor-login .login-form form p{
+                width: 100%;
+                color: black;
+                letter-spacing: 1px;
+                padding: 15px 0px 10px 0px;
+                font-size: 20px;
+                font-weight: bold;
+                font-family: sans-serif;
+                text-align: center;
+            }
+            .container .main .doctor-login .login-form form .input-flex{
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .container .main .doctor-login .login-form form .input-flex ion-icon{
+                border: 1px solid black;
+                font-size: 22px;
+                padding: 10px;
+            }
+            .container .main .doctor-login .login-form form .input-flex input{
+                width: 85%;
+                padding: 12px 13px;
+                font-size: 16px;
+                outline: none;
+                border: 1px solid black;
+                letter-spacing: 1.1px;
+            }
+            .container .main button{
+                padding: 10px 17px;
+                background: #ffffff;
+                border: .1px solid black;
+                color: rgb(0, 0, 0);
+                font-weight: bold;
+                border-radius: 3px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 16px;
+            }
+            .container .main button:hover{
+                color: #ffffff;
+                background-color: rgb(0, 0, 0);
+                cursor: pointer;
+            }
+            .container .main .doctor-login .login-form form .input-flex {
+                position: relative;
+            }
+
+            .container .main .doctor-login .login-form form .input-flex .password-toggle {
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+            }
+
+            @media only screen and (max-width: 500px){
+                .container .main .doctor-login .login-form form .input-flex .password-toggle{
+                    position: absolute;
+                    right: 0px;
+                }
+                .container .main .doctor-login .login-form form .h b{
+                    position: relative;
+                    right: 8px;
+                }
+                .container .main .doctor-login .login-form form .k button{
+                    position: relative;
+                    right: 8px;
+                }
+            }
+
+
+            #studentDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 20px;
+                cursor: pointer;
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                width: 95%;
+            }
+
+            .studentCard{
+                width: 100%;
+                height: 60px;
+                padding: 5px 20px;
+                border: 1px solid #9c8e8e;
+                margin-bottom: 12px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+            .studentCard:hover{
+                border: 1.5px solid #000000;
+                transform: scale(1.002);
+            }
+            .studentCardOne{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .studentCardOne img{
+                width: 40px;
+                height: 40px;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+
+            #doctorDiv{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px 20px;
+                cursor: pointer;
+                padding: 20px;
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                margin: 20px auto;
+                width: 95%; 
+            }
+            .doctorCard{
+                width: 100%;
+                height: 60px;
+                padding: 5px 20px;
+                border: 1px solid #9c8e8e;
+                margin-bottom: 12px;
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: transform 0.3s ease;
+            }
+            .doctorCard:hover{
+                border: 1.5px solid #000000;
+                transform: scale(1.002);
+            }
+            .doctorCardOne{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .doctorCardOne img{
+                width: 40px;
+                height: 40px;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .studentCard:nth-child(even), .doctorCard:nth-child(even) {
+                background-color: #ffffff; /* Light grey for even */
+            }
+
+            .studentCard:nth-child(odd), .doctorCard:nth-child(odd) {
+                background-color: #f2f5f3f5; /* White for odd */
+            }
+            .resultCount {
+                font-size: 16px;
+                font-weight: bold;
+                color: #000000;
+                margin-top: 70px;
+                position: absolute;
+                right: 20px;
+            }
+
+            .noResults {
+                display: none;
+                color: #AA0000;
+                font-weight: bold;
+                margin-top: 70px;
+                position: absolute;
+                right: 20px;
+            }
+         
+        </style>
+
+<style>
+    /* Popup container */
+    #popupProfile {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+        height: auto;
+        max-height: 90vh;
+        background-color: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: none; /* Initially hidden */
+        z-index: 10000;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    /* Flexbox layout for two sections */
+    .popup-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Left section (smaller width) */
+    .profile-left {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+    }
+
+    .profile-left img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        margin-bottom: 15px;
+    }
+
+    .profile-left button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .edit-btn {
+        background-color: #007bff;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .edit-btn ion-icon{
+        padding-right: 5px;
+    }
+
+    .delete-btn {
+        background-color: #dc3545;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .delete-btn ion-icon{
+        padding-right: 5px;
+    }
+
+    .edit-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .delete-btn:hover {
+        background-color: #a71d2a;
+    }
+
+    /* Right section (larger width) */
+    .profile-right {
+        width: 70%;
+        padding: 20px;
+    }
+
+    .profile-right h2 {
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .profile-right label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+    }
+
+    .profile-right input,.profile-right select {
+        width: 100%;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+    }
+
+    /* Close button */
+    #close-outline {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        padding: 3px;
+    }
+
+    #close-outline:hover {
+        border: 1px solid #000;
+        border-radius: 50%;
+    }
+    /* Ensure SweetAlert2 popups are on top of everything else */
+    .swal2-popup {
+        z-index: 9999 !important; /* Make sure SweetAlert has the highest z-index */
+    }
+
+    /* Set a lower z-index for the profile popup */
+    #popupProfile {
+        z-index: 10 !important;  /* Ensure profile popup is below SweetAlert */
+    }
+
+</style>
+
+<style>
+/* Medical Records Section */
+#recordsDiv {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    outline: none;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-icon {
+    padding: 9px;
+    background-color: black;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+/* Records Table */
+.records-container {
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 16px;
+}
+
+.records-table th,
+.records-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.records-table th {
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+}
+
+.records-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.records-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Record Count */
+.record-count {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+/* Style trash icon */
+.trash-icon {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+
+.trash-icon:hover {
+    color: darkred;
+}
+
+
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+/* Dropdown for filter criteria */
+.filter-select {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Input field for filter value */
+.filter-input {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+    outline: none;
+}
+
+/* Filter button */
+.filter-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover effect on the filter button */
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+
+</style>
+
+
+
+    </head>
+    <body><div class = "container">
+        <div class = "header">
+            <div class = "img">
+                <img src = "/Logo.png" width = "60px"/>
+            </div>
+            <div class = "heading">
+                <h1>Rajiv Gandhi University of Knowledge Technologies - Nuzvid</h1>
+                <h4>Catering to the Educational Needs of Gifted Rural Youth of Andhra Pradesh</h4>
+                <h4>(Established by the Govt. of Andhra Pradesh and recognized as per Section 2(f), 12(B) of UGC Act, 1956)</h4>
+            </div>
+            <div class = "img">
+                <img src = "/medical_logo.png" width = "100px"/>
+            </div>
+        </div>
+        <div class = "main">
+        
+            <div class = "title">
+                <h2>Center for Student Health Records - RGUKT NUZVID</h2>
+            </div>
+            <div class="title" style = "background-color: white;border-bottom: 1px solid #222222;justify-content: space-between;">
+                <h2 style="color: black;">HEMANTH KUMAR</h2>
+                <form action="/logoutAdmin" method="get">
+                    <button class="h">Logout <ion-icon name="log-out-outline" style="font-size: 20px;margin-left: 4px"></ion-icon></button>
+                </form>
+            </div>
+
+            <div class="title" style="background-color: white; border-bottom: 1px solid #222222;">
+                <a href="#" id="studentsTab" onclick="showSection('studentDiv', this)" 
+                   style="font-weight: bold; border-bottom: 2px solid #222222; color: #000000;">
+                    Students
+                </a>
+                <a href="#" id="employeesTab" onclick="showSection('doctorDiv', this)">Employees</a>
+                <a href="#" id="recordsTab" onclick="showSection('recordsDiv', this)">Medical Records</a>
+            </div>
+            
+
+
+            <div id="studentDiv">
+                <div class="title" style = "background-color: white;justify-content: space-between;margin-right: -20px;margin-bottom: 30px;">
+                    <div><h1 style="font-size: 25px;">Students List</h1></div>
+                    <div style="display: flex;">
+                        <button style="display: flex;justify-content: center;align-items: center;margin-right: 20px;" onclick="addStudent()"><ion-icon name="add-outline" style="margin-right: 3px;font-size: 19px;"></ion-icon>Add Student</button>
+                        <div class="search" style="display: flex;justify-content: center;align-items: center;">
+                            <input type="search" id="studentSearch" placeholder="Student ID or Name" style="outline: none;text-transform: uppercase;padding: 7px 13px;font-size: 17px;">
+                            <ion-icon name="search-outline" id="studentSearchIcon" style="padding: 9.3px; background-color: black;font-size: 20px;color: white;font-weight: bold;cursor: pointer;"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <p id="studentResultCount" class="resultCount" style="display: none;"></p>
+                <p id="noStudentResults" class="noResults">No results found</p>
+                
+
+                <% students = students.sort((a, b) => a.id.localeCompare(b.id)); %>
+                <% students.forEach(student => { %>
+                    <div class="studentCard" 
+                        data-id="<%= student.id %>"
+                        data-name="<%= student.name %>"
+                        data-gender="<%= student.gender %>"
+                        data-email="<%= student.email %>"
+                        data-phone="<%= student.phone %>"
+                        data-photo="<%= student.photo %>"
+                        data-password="<%= student.password %>">
+                        <div class="doctorCardOne">
+                            <img src="/uploads/<%= student.photo %>" alt="Employee Photo"/>
+                            <h3><%= student.id %> | <strong style="font-weight: 100;font-size: 16px;"><%= student.name %></strong></h3>  
+                        </div> 
+                        <div class="studentCardTwo">
+                            <button>View Profile</button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+
+
+
+
+
+            <div id="doctorDiv" style="display: none;">
+                <div class="title" style = "background-color: white;justify-content: space-between;margin-right: -20px;margin-bottom: 30px;">
+                    <div><h1 style="font-size: 25px;">Doctors List</h1></div>
+                    <div style="display: flex;">
+                        <button style="display: flex;justify-content: center;align-items: center;margin-right: 20px;" onclick="addDoctor()"><ion-icon name="add-outline" style="margin-right: 3px;font-size: 19px;"></ion-icon>Add Doctor</button>
+                        <div class="search" style="display: flex;justify-content: center;align-items: center;">
+                            <input type="search" id="doctorSearch" placeholder="Employee ID or Name" style="outline: none;text-transform: uppercase;padding: 7px 13px;font-size: 17px;">
+                            <ion-icon name="search-outline" id="doctorSearchIcon" style="padding: 9.3px; background-color: black;font-size: 20px;color: white;font-weight: bold;cursor: pointer;"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <p id="doctorResultCount" class="resultCount" style="display: none;"></p>
+                <p id="noDoctorResults" class="noResults">No results found</p>
+                
+                <% employees = employees.sort((a, b) => a.id.localeCompare(b.id)); %>
+                <% employees.forEach(employee => { %>
+                    <div class="doctorCard" 
+                        data-id="<%= employee.id %>"
+                        data-name="<%= employee.name %>"
+                        data-gender="<%= employee.gender %>"
+                        data-email="<%= employee.email %>"
+                        data-phone="<%= employee.phone %>"
+                        data-photo="<%= employee.photo %>"
+                        data-password="<%= employee.password %>">
+                        <div class="doctorCardOne">
+                            <img src="/uploads/<%= employee.photo %>" alt="Employee Photo"/>
+                            <h3><%= employee.id %> | <strong style="font-weight: 100;font-size: 16px;"><%= employee.name %></strong></h3>  
+                        </div>  
+                        <div class="doctorCardTwo">
+                            <button>View Profile</button>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+
+
+            <script>
+                function addStudent() {
+                    window.location.href = "/setStudentAccess"; // Secure route sets session
+                }
+            
+                function addDoctor() {
+                    window.location.href = "/setDoctorAccess"; // Secure route sets session
+                }
+            </script>
+
+
+            <script>
+                // Function to sort records by ID
+                function sortRecords(records) {
+                    return records.sort((a, b) => a.id.localeCompare(b.id));
+                }
+            
+                // Function to filter student records based on search input
+                function searchStudents() {
+                    let input = document.getElementById("studentSearch").value.toUpperCase();
+                    let cards = document.querySelectorAll("#studentDiv .studentCard");
+            
+                    cards.forEach(card => {
+                        let idText = card.querySelector("h3").textContent.toUpperCase();
+                        card.style.display = idText.includes(input) ? "flex" : "none";
+                    });
+                }
+            
+                // Function to filter doctor records based on search input
+                function searchDoctors() {
+                    let input = document.getElementById("doctorSearch").value.toUpperCase();
+                    let cards = document.querySelectorAll("#doctorDiv .doctorCard");
+            
+                    cards.forEach(card => {
+                        let idText = card.querySelector("h3").textContent.toUpperCase();
+                        card.style.display = idText.includes(input) ? "flex" : "none";
+                    });
+                }
+        
+            </script>   
+
+
+            <script>
+                function searchRecords(inputId, cardClass, resultCountId, noResultMsgId) {
+                    let input = document.getElementById(inputId).value.toUpperCase();
+                    let cards = document.querySelectorAll("." + cardClass);
+                    let matchedCount = 0;
+
+                    cards.forEach((card, index) => {
+                        let idText = card.querySelector("h3").textContent.toUpperCase();
+                        if (idText.includes(input)) {
+                            card.style.display = "flex"; // Show matched items
+                            matchedCount++;
+                            card.style.backgroundColor = (matchedCount % 2 === 0) ? "f2f5f3f5" : "#ffffff"; // Alternate colors dynamically
+                        } else {
+                            card.style.display = "none"; // Hide unmatched items
+                        }
+                    });
+
+                    // Show the number of results found
+                    let resultCountElement = document.getElementById(resultCountId);
+                    resultCountElement.innerText = matchedCount + " results found";
+                    resultCountElement.style.display = matchedCount > 0 ? "block" : "none";
+
+                    // Show "No results found" message if no matches
+                    let noResultElement = document.getElementById(noResultMsgId);
+                    noResultElement.style.display = matchedCount > 0 ? "none" : "block";
+                }
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.getElementById("studentSearch").addEventListener("input", () => {
+                        searchRecords("studentSearch", "studentCard", "studentResultCount", "noStudentResults");
+                    });
+                    document.getElementById("studentSearchIcon").addEventListener("click", () => {
+                        searchRecords("studentSearch", "studentCard", "studentResultCount", "noStudentResults");
+                    });
+
+                    document.getElementById("doctorSearch").addEventListener("input", () => {
+                        searchRecords("doctorSearch", "doctorCard", "doctorResultCount", "noDoctorResults");
+                    });
+                    document.getElementById("doctorSearchIcon").addEventListener("click", () => {
+                        searchRecords("doctorSearch", "doctorCard", "doctorResultCount", "noDoctorResults");
+                    });
+                });
+            </script>
+
+
+
+            <script>
+                function showSection(sectionId, clickedTab) {
+                    // Hide all sections
+                    document.getElementById("studentDiv").style.display = "none";
+                    document.getElementById("doctorDiv").style.display = "none";
+                    document.getElementById("recordsDiv").style.display = "none";
+            
+                    // Show the selected section
+                    document.getElementById(sectionId).style.display = "flex";
+            
+                    // Remove active styling from all tabs
+                    document.getElementById("studentsTab").style.borderBottom = "none";
+                    document.getElementById("employeesTab").style.borderBottom = "none";
+                    document.getElementById("recordsTab").style.borderBottom = "none";
+                    document.getElementById("studentsTab").style.fontWeight = "100";
+                    document.getElementById("employeesTab").style.fontWeight = "100";
+                    document.getElementById("recordsTab").style.fontWeight = "100";
+                    document.getElementById("studentsTab").style.opacity = "0.8";
+                    document.getElementById("employeesTab").style.opacity = "0.8";
+                    document.getElementById("recordsTab").style.opacity = "0.8";
+            
+                    document.getElementById("studentsTab").style.color = "#000";
+                    document.getElementById("employeesTab").style.color = "#000";
+                    document.getElementById("recordsTab").style.color = "#000";
+            
+                    clickedTab.style.borderBottom = "2px solid #222222";
+                    clickedTab.style.opacity = "1";
+                    clickedTab.style.color = "black";
+                    clickedTab.style.fontWeight = "bold";
+                }
+            </script>
+            
+
+
+
+            <div id="popupProfile">
+                <ion-icon id="close-outline" name="close-outline" onclick="closePopup()"></ion-icon>
+                
+                <div class="popup-content">
+                    <!-- Left Section -->
+                    <div class="profile-left">
+                        <img id="profilePhoto" src="/default-profile.jpg" alt="User Photo">
+                        <button id="editProfileBtn" class="edit-btn"><ion-icon name="create-outline"></ion-icon>Edit Profile</button>
+                        <button id="deleteProfileBtn" class="delete-btn"><ion-icon name="trash-outline"></ion-icon>Delete Profile</button>
+                    </div>
+            
+                    <!-- Right Section -->
+                    <div class="profile-right">
+                        <h2>User Details</h2>
+                        <label for="profileID">ID Number:</label>
+                        <input id="profileID" type="text" disabled>
+            
+                        <label for="profileName">Name:</label>
+                        <input id="profileName" type="text" disabled>
+            
+                        <label for="profileGender">Gender:</label>
+                        <select id="profileGender">
+                            <option value="" selected disabled>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Others">Others</option>
+                        </select>
+            
+                        <label for="profileEmail">Email:</label>
+                        <input id="profileEmail" type="text" disabled>
+            
+                        <label for="profilePhone">Phone:</label>
+                        <input id="profilePhone" type="text" disabled>
+            
+                        <label for="profilePassword">Password (Encrypted):</label>
+                        <input id="profilePassword" type="text" disabled>
+            
+                        <button id="saveProfileBtn" class="save-btn" style="display: none;position: relative;top: 10px;">Save Changes</button>
+                        <div id="errorMessage" style="color: red; margin-top: 10px; display: none;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    let viewElements = document.querySelectorAll(".studentCard, .doctorCard");
+            
+                    viewElements.forEach(card => {
+                        card.addEventListener("click", function(event) {
+                            if (event.target.tagName.toLowerCase() === "button") {
+                                event.stopPropagation();
+                            }
+            
+                            let id = card.dataset.id;
+                            let name = card.dataset.name;
+                            let gender = card.dataset.gender;
+                            let email = card.dataset.email;
+                            let phone = card.dataset.phone;
+                            let photo = card.dataset.photo || "default-profile.jpg";
+                            let password = card.dataset.password || "********";
+            
+                            document.getElementById("profileID").value = id;
+                            document.getElementById("profileName").value = name;
+                            document.getElementById("profileGender").value = gender;
+                            document.getElementById("profileEmail").value = email;
+                            document.getElementById("profilePhone").value = phone;
+                            document.getElementById("profilePassword").value = password;
+                            document.getElementById("profilePhoto").src = "/uploads/" + photo;
+            
+                            document.getElementById("popupProfile").dataset.originalValues = JSON.stringify({ id, name, gender, email, phone, password });
+            
+                            document.getElementById("saveProfileBtn").style.display = "none";
+            
+                            document.getElementById("popupProfile").style.display = "block";
+                        });
+                    });
+            
+                    document.getElementById("editProfileBtn").addEventListener("click", () => {
+                        document.getElementById("profileName").removeAttribute("disabled");
+                        document.getElementById("profileGender").removeAttribute("disabled");
+                        document.getElementById("profileEmail").removeAttribute("disabled");
+                        document.getElementById("profilePhone").removeAttribute("disabled");
+                        document.getElementById("profilePassword").removeAttribute("disabled");
+            
+                        document.getElementById("saveProfileBtn").style.display = "inline-block";
+                    });
+            
+                    document.getElementById("saveProfileBtn").addEventListener("click", () => {
+                        let id = document.getElementById("profileID").value;
+                        let name = document.getElementById("profileName").value;
+                        let gender = document.getElementById("profileGender").value;
+                        let email = document.getElementById("profileEmail").value;
+                        let phone = document.getElementById("profilePhone").value;
+                        let password = document.getElementById("profilePassword").value;
+            
+                        // Validation variables
+                        let errorMessages = [];
+            
+                        // Validate Gender
+                        if (!gender) {
+                            errorMessages.push("Please select a gender.");
+                        }
+            
+                        // Validate Email (valid email format)
+                        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!email || !emailPattern.test(email)) {
+                            errorMessages.push("Please enter a valid email address.");
+                        }
+            
+                        // Validate Phone (10 digits)
+                        const phonePattern = /^[0-9]{10}$/;
+                        if (!phone || !phonePattern.test(phone)) {
+                            errorMessages.push("Phone number must be 10 digits.");
+                        }
+            
+                        // Validate Password (at least 4 characters)
+                        if (!password || password.length < 4) {
+                            errorMessages.push("Password must be at least 4 characters.");
+                        }
+            
+                        // Display error messages if any
+                        if (errorMessages.length > 0) {
+                            document.getElementById("errorMessage").innerHTML = errorMessages.join("<br>");
+                            document.getElementById("errorMessage").style.display = "block";
+                        } else {
+                            // Hide error messages if no validation errors
+                            document.getElementById("errorMessage").style.display = "none";
+            
+                            // Proceed with updating the user
+                            document.getElementById("close-outline").style.display = "none";
+            
+                            fetch("/updateUser", {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({ id, name, gender, email, phone, password })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    Swal.fire({
+                                        title: 'Success!',
+                                        text: 'Profile updated successfully!',
+                                        icon: 'success',
+                                        confirmButtonText: 'Ok'
+                                    }).then(() => {
+                                        location.reload();  // Refresh the page after success
+                                    });
+                                } else {
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        text: 'Error updating profile.',
+                                        icon: 'error',
+                                        confirmButtonText: 'Try Again'
+                                    }).then(() => {
+                                        document.getElementById("close-outline").style.display = "block"; // Re-show the close button
+                                    });
+                                }
+                            });
+                        }
+                    });
+            
+                    document.getElementById("deleteProfileBtn").addEventListener("click", () => {
+                        let id = document.getElementById("profileID").value;
+            
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: 'Do you want to delete this user?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: '#d33',
+                            cancelButtonColor: '#3085d6',
+                            confirmButtonText: 'Delete'
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                document.getElementById("close-outline").style.display = "none";
+            
+                                fetch("/deleteUser", {
+                                    method: "POST",
+                                    headers: { "Content-Type": "application/json" },
+                                    body: JSON.stringify({ id })
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.success) {
+                                        Swal.fire({
+                                            title: 'Deleted!',
+                                            text: 'User deleted successfully!',
+                                            icon: 'success',
+                                            confirmButtonText: 'Ok'
+                                        }).then(() => {
+                                            document.getElementById("popupProfile").style.display = "none";
+                                            location.reload(); // Refresh the page after deletion
+                                            document.getElementById("close-outline").style.display = "block"; // Re-show the close button
+                                        });
+                                    } else {
+                                        Swal.fire({
+                                            title: 'Error!',
+                                            text: 'Error deleting user.',
+                                            icon: 'error',
+                                            confirmButtonText: 'Try Again'
+                                        }).then(() => {
+                                            document.getElementById("close-outline").style.display = "block"; // Re-show the close button
+                                        });
+                                    }
+                                });
+                            }
+                        });
+                    });
+                });
+            
+                function closePopup() {
+                    let originalValues = JSON.parse(document.getElementById("popupProfile").dataset.originalValues);
+            
+                    document.getElementById("profileID").value = originalValues.id;
+                    document.getElementById("profileName").value = originalValues.name;
+                    document.getElementById("profileGender").value = originalValues.gender;
+                    document.getElementById("profileEmail").value = originalValues.email;
+                    document.getElementById("profilePhone").value = originalValues.phone;
+                    document.getElementById("profilePassword").value = originalValues.password;
+            
+                    document.getElementById("profileName").setAttribute("disabled", true);
+                    document.getElementById("profileGender").setAttribute("disabled", true);
+                    document.getElementById("profileEmail").setAttribute("disabled", true);
+                    document.getElementById("profilePhone").setAttribute("disabled", true);
+                    document.getElementById("profilePassword").setAttribute("disabled", true);
+            
+                    document.getElementById("saveProfileBtn").style.display = "none";
+            
+                    document.getElementById("popupProfile").style.display = "none";
+                }
+            </script>
+            
+
+
+            <div id="recordsDiv" style="display: none;">
+                <!-- Header -->
+                <div class="title" style="background-color: white; justify-content: space-between; margin-right: -20px;">
+                    <h1 style="font-size: 25px;">Medical Records</h1>
+                    <div class="filter">
+                        <select id="filterCriteria" class="filter-select">
+                            <option value="none">None</option>
+                            <option value="studentId">Student ID</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="problem">Problem</option>
+                            <option value="date">Date</option>
+                        </select>
+                    
+                        <input type="text" id="filterValue" class="filter-input" placeholder="Enter value to filter">
+                        
+                        <button id="applyFilter" class="filter-button" style="background-color: black;color: white;"><ion-icon name="filter-outline" style="padding-right: 5px;"></ion-icon>Apply Filter</button>
+                    </div>
+                    
+                </div>
+            
+                <!-- Record Count -->
+                <p id="recordsCount" class="record-count"></p>
+                <!-- Records Table -->
+                <div class="records-container">
+                    <table class="records-table">
+                        <thead>
+                            <tr>
+                                <th>Sl. No</th>
+                                <th>Student ID</th>
+                                <th>Doctor Name</th>
+                                <th>Date</th>
+                                <th>Problem</th>
+                                <th>Medicines</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsTableBody">
+                            <!-- Data will be inserted here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            
+            </div>
+
+            
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+    // Listen for the "Apply Filter" button click
+    document.getElementById("applyFilter").addEventListener("click", applyFilter);
+});
+
+// Function to apply the selected filter
+function applyFilter() {
+    // Get the selected filter criteria and value
+    const filterCriteria = document.getElementById("filterCriteria").value;
+    const filterValue = document.getElementById("filterValue").value;
+
+    // Check if the "None" option is selected
+    if (filterCriteria === "none") {
+        // If "None" is selected, fetch all records without applying any filter
+        fetchFilteredRecords();
+    } else {
+        // Check if the filter value is not empty
+        if (!filterValue) {
+            alert("Please enter a value to filter by.");
+            return;
+        }
+        // Fetch filtered records based on the selected criteria
+        fetchFilteredRecords(filterCriteria, filterValue);
+    }
+}
+
+// Function to fetch filtered records from the server
+function fetchFilteredRecords(criteria = '', value = '') {
+    // Construct the request body
+    const requestBody = criteria && value ? { criteria, value } : {};  // Send empty body when no filter
+
+    fetch("/getFilteredRecords", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)  // Send the filter criteria and value if any
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            displayRecords(data.records); // Update table with filtered data
+        } else {
+            alert("No records found or error fetching records.");
+        }
+    })
+    .catch(err => {
+        console.error("Error fetching filtered records:", err);
+        alert("Error fetching records.");
+    });
+}
+
+// Function to display the filtered records in the table
+function displayRecords(records) {
+    let tableBody = document.getElementById("recordsTableBody");
+    tableBody.innerHTML = ""; // Clear previous records
+
+    if (records.length === 0) {
+        tableBody.innerHTML = "<tr><td colspan='7' style='text-align: center; color: red;'>No records found.</td></tr>";
+        return;
+    }
+
+    records.forEach((record, index) => {
+        let row = document.createElement("tr");
+        row.style.backgroundColor = (index % 2 === 0) ? "#f0f0f0" : "#ffffff"; // Alternating row colors
+
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${record.id}</td>
+            <td>${record.doctorname}</td>
+            <td>${record.date}</td>
+            <td>${record.problem}</td>
+            <td>${record.medicines.map(m => m.name).join(", ")}</td>
+        `;
+
+        tableBody.appendChild(row);
+    });
+}
+
+            </script>
+            
+
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    // Fetch records when the records tab is clicked
+                    document.getElementById("recordsTab").addEventListener("click", fetchRecords);
+            
+                    // Listen for clicks on the entire table and check if the trash icon was clicked
+                    document.getElementById("recordsTableBody").addEventListener("click", function (event) {
+                        if (event.target && event.target.nodeName === "ION-ICON" && event.target.name === "trash-outline") {
+                            // Get the record ID from the parent row
+                            const recordId = event.target.closest("tr").getAttribute("data-id");
+                            confirmDelete(recordId);  // Pass the record ID to confirmDelete
+                        }
+                    });
+                });
+            
+                // Fetch and display the records
+                function fetchRecords() {
+                    document.getElementById("recordsDiv").style.display = "flex"; // Show records section
+                    document.getElementById("studentDiv").style.display = "none";
+                    document.getElementById("doctorDiv").style.display = "none";
+            
+                    fetch("/getRecords")
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                displayRecords(data.records); // Update table with fresh data
+                            } else {
+                                document.getElementById("recordsContainer").innerHTML = "<p style='color: red;'>Failed to load records.</p>";
+                            }
+                        });
+                }
+            
+                // Display records in the table
+                function displayRecords(records) {
+                    let tableBody = document.getElementById("recordsTableBody");
+                    tableBody.innerHTML = ""; // Clear previous records
+            
+                    if (records.length === 0) {
+                        tableBody.innerHTML = "<tr><td colspan='7' style='text-align: center; color: red;'>No records found.</td></tr>";
+                        document.getElementById("recordsCount").innerText = "";
+                        return;
+                    }
+            
+                    records.forEach((record, index) => {
+                        let row = document.createElement("tr");
+                        row.setAttribute('data-id', record.id); // Set record ID as a data attribute for easy access
+                        row.style.backgroundColor = (index % 2 === 0) ? "#f0f0f0" : "#ffffff"; // Alternating row colors
+            
+                        row.innerHTML = `
+                            <td>${index + 1}</td>
+                            <td>${record.id}</td>
+                            <td>${record.doctorname}</td>
+                            <td>${record.date}</td>
+                            <td>${record.problem}</td>
+                            <td>${record.medicines || "No medicines prescribed"}</td>
+                            <td>
+                                <ion-icon name="trash-outline" class="trash-icon"></ion-icon> <!-- Trash icon -->
+                            </td>
+                        `;
+            
+                        tableBody.appendChild(row);
+                    });
+            
+                    document.getElementById("recordsCount").innerText = `Total Records: ${records.length}`;
+                }
+            
+                // Function to confirm record deletion
+                function confirmDelete(recordId) {
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: 'Do you want to delete this record?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#d33',
+                        cancelButtonColor: '#3085d6',
+                        confirmButtonText: 'Delete'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Call the deleteRecord function with the correct record ID
+                            deleteRecord(recordId);
+                        }
+                    });
+                }
+            
+                // Function to delete record from the server
+                function deleteRecord(recordId) {
+                    fetch("/deleteRecord", {
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ id: recordId })  // Send the record ID in the body
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire(
+                                'Deleted!',
+                                'The record has been deleted.',
+                                'success'
+                            ).then(() => {
+                                // Re-fetch the records and update the table after deletion
+                                fetchRecords(); // This will fetch updated records after deletion
+                            });
+                        } else {
+                            Swal.fire('Error!', data.message || 'Error deleting record.', 'error');
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Error deleting record:", err);
+                        Swal.fire('Error!', 'Error deleting record.', 'error');
+                    });
+                }
+            </script>
+            
+
+        
+            <div class = "copyright">
+                <p><b>Copyright © 2015-2018 <i style = "color: black;">RGUKT Nuzvid.</i></b> All rights reserved.</p>
+                <p><a href = "#"><b>CSHR</b></a></p>
+            </div>
+        </div>
+    </div>
+    
+</html>
