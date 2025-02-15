@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>CSHR - About</title>
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width=device-width,initial-scale=1.0"/>
+        <meta name = "author" content = "HEMANTH KUMAR"/>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+        <link rel="stylesheet" href="/cshr.css">
+        <link rel="icon" type="image/x-icon" href="/Logo.ico">
+
+        <style>
+            .about-container{
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 30px 0px;
+            }
+            .about{
+                width: 85%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+            .about h2{
+                font-family: sans-serif;
+                letter-spacing: 1.1px;
+                padding-bottom: 5px;
+                
+            }
+            .about p{
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                padding: 20px 10px;
+                line-height: 30px;
+                font-size: 1.15rem;
+                letter-spacing: 1.03px;
+            }
+            @media only screen and (max-width: 800px){
+                .about{
+                    width: 100%;
+                }
+                .about p{
+                    font-size: 16px;
+                }
+            }
+        </style>
+
+        <style>
+            .health-tips {
+                text-align: center;
+                background-color: white;
+            }
+
+            .health-tips h3{
+                font-family: sans-serif;
+                            letter-spacing: 1.1px;
+                            padding-bottom: 5px;
+                            margin-bottom: 20px;
+            }
+
+            .tips-boxes {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px; /* Increased gap for better spacing */
+                padding: 20px;
+            }
+
+            .tip {
+                position: relative;
+                width: 300px; /* Increased width */
+                height: 200px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                overflow: hidden;
+                cursor: pointer;
+                border: 1px solid #ddd;
+                transition: transform 0.3s ease; /* Added a slight transform on hover */
+            }
+
+            .tip:hover {
+                transform: scale(1.05); /* Slight zoom on hover */
+            }
+
+            .tip-text {
+                position: absolute;
+                left: -100%;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: left 0.5s ease;
+                padding: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                font-weight: bold;
+                letter-spacing: 0.5px;
+                font-family: sans-serif;
+                border-right: 7px solid rgb(68, 180, 245);
+            }
+
+            .tip:hover .tip-text {
+                left: 0;
+            }
+
+            
+            
+.download-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+        </style>
+
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "header">
+                <div class = "img">
+                    <img src = "/Logo.png" width = "60px"/>
+                </div>
+                <div class = "heading">
+                    <h1>Rajiv Gandhi University of Knowledge Technologies - Nuzvid</h1>
+                    <h4>Catering to the Educational Needs of Gifted Rural Youth of Andhra Pradesh</h4>
+                    <h4>(Established by the Govt. of Andhra Pradesh and recognized as per Section 2(f), 12(B) of UGC Act, 1956)</h4>
+                </div>
+                <div class = "img">
+                    <img src = "/medical_logo.png" width = "100px"/>
+                </div>
+            </div>
+            <div class = "main">
+            
+                <div class = "title">
+                    <h2>Center for Student Health Records - RGUKT NUZVID</h2>
+                </div>
+
+                <div class = "title" style = "background-color: white;border-bottom: 1px solid #222222;">
+                    <a href = "/student">Student</a>
+                    <a href = "/employee">Employee</a>
+                    <a href = "/about" style="font-weight: bold;border-bottom: 2px solid #222222;color: #000000">About</a>
+                </div>
+                
+                <div class = "about-container">
+                    <div class="about">
+                        <h2><b style="padding: 0px 3px 5px 3px;border-bottom: 2px solid #000000;">About us</b></h2>
+                        <p>Center for Student Health Records is an initiative taken by Rajiv Gandhi University of Knowledge Technologies - Andhra Pradesh. It deals with the student health records inside the campus. It includes the health issues faced by the students in the campus, the medicines they were given and the doctors who dealed with their medical problems. This website ensures full security to the students that they only can see their medical records with their own login credentials. This website maintains health records of students inside the campus only.</p>
+                    </div>
+                </div>
+
+
+                <div class="health-tips">
+                    <h3><b style="padding: 0px 3px 5px 3px;border-bottom: 2px solid #000000;">Health Tips</b></h3>
+                    <div class="tips-boxes">
+                        <div class="tip" style="background-image: url('sleep.jpg');">
+                            <div class="tip-text">
+                                Get Enough Sleep
+                                <a href="/sleep.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="tip" style="background-image: url('drink.jpg');">
+                            <div class="tip-text">
+                                Stay Hydrated
+                                <a href="/hydrated.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="tip" style="background-image: url('sports.jpg');">
+                            <div class="tip-text">
+                                Play Outdoor Games
+                                <a href="/games.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="tip" style="background-image: url('workout.jpg');">
+                            <div class="tip-text">
+                                Exercise Regularly
+                                <a href="/excercise.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="tip" style="background-image: url('food.jpg');">
+                            <div class="tip-text">
+                                Eat Balanced Diet
+                                <a href="/diet.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                        <div class="tip" style="background-image: url('meditation.png');">
+                            <div class="tip-text">
+                                Practice Meditation
+                                <a href="/meditation.pdf" class="download-btn" target="_blank">Open PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class = "links-head">
+                    <h3>Quick links</h3>
+                </div>
+                <div class = "links">
+                    <div class = "link-box">
+                        <a href = "https://rguktn.ac.in/">Home</a>
+                        <a href = "https://intranet.rguktn.ac.in/SMS/">SMS</a>
+                        <a href = "https://examcell.rguktn.ac.in/">Exam cell</a>
+                        <a href = "https://rguktn.ac.in/library/">Library</a>
+                        <a href = "https://rguktn.ac.in/academics/departments/">Departments</a>
+                    </div>
+                    <div class = "link-box">
+                        <a href = "https://rguktn.ac.in/administration/">Administration</a>
+                        <a href = "https://rguktn.ac.in/student_affairs/student_welfare/">Student welfare</a>
+                        <a href = "https://alumni.rguktn.ac.in/">Alumni</a>
+                        <a href = "https://rguktn.ac.in/rti/">RTI</a>
+                        <a href = "https://rguktn.ac.in/contactus/">Contact us</a>
+                    </div>
+                </div>
+                <div class = "mail-link">
+                    <h3>E-Mail</h3>
+                    <p><a href="mailto:n210042@rguktn.ac.in"><ion-icon name="mail-open-outline"></ion-icon>n210042@rguktn.ac.in</a></p>
+                </div>
+
+                <div class="social-media">
+                    <div class="contact-phone">
+                        <h3>Phone</h3>
+                        <p>+91 32-7292-001</p>
+                    </div>
+                    <div class="s-links">
+                        <h3>Follow us</h3>
+                        <div class="follow">
+                            <a href=""><ion-icon name="logo-facebook" class="facebook"></ion-icon></a>
+                            <a href=""><ion-icon name="logo-instagram" class="instagram"></ion-icon></a>
+                            <a href=""><ion-icon name="logo-twitter" class="twitter"></ion-icon></a>
+                            <a href=""><ion-icon name="logo-linkedin" class="linkedin"></ion-icon></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class = "copyright">
+                    <p><b>Copyright © 2015-2018 <i style = "color: black;">RGUKT Nuzvid.</i></b> All rights reserved.</p>
+                    <p><a href = "#"><b>CSHR</b></a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
