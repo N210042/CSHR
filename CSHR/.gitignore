@@ -1,1 +1,51 @@
-node_modules
+# Ignore system files and directories
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/
+.docker/
+.dotnet/
+.fontconfig/
+.gitconfig
+.gnome/
+.gnupg/
+.java/
+.lesshst
+.local/
+.mongodb/
+.npm/
+.nvm/
+.pki/
+.profile
+.ssh/
+.sudo_as_admin_successful
+.thunderbird/
+.vscode/
+.wget-hsts
+.wine/
+snap/
+
+# Ignore specific files
+Buy Yamaha PSR F52 ZU49860 Standard Keyboard, 61 Keys, Black at Reliance Digital.pdf
+GITHUB_PAT.txt
+RECOVERYCODE_TWILIO.txt
+google-chrome-stable_current_amd64.deb
+keyfile
+mongodb-compass_1.26.0_amd64.deb
+mysql-apt-config.gpg
+mysql-apt-config_0.8.18-1_all.deb
+mysql-apt-config_0.8.18-1_all.deb.1
+mysql-apt-config_0.8.20-1_all.deb
+packages.microsoft.gpg
+
+# Ignore directories
+Documents/
+Downloads/
+GMS/
+LOGIN/
+Music/
+Pictures/
+PycharmProjects/
+Untitled-2024-04-15-18-20-55/
+Videos/
